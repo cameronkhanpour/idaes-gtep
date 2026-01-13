@@ -1,0 +1,103 @@
+
+Gurobi 12.0.0 (win64) logging started Mon Nov 24 14:26:47 2025
+
+Set parameter LogFile to value "logfileAC_5busExtremeVariation_test1.txt"
+Gurobi Optimizer version 12.0.0 build v12.0.0rc1 (win64 - Windows 10.0 (19045.2))
+
+CPU model: AMD Ryzen 7 3700X 8-Core Processor, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Optimize a model with 223524 rows, 121850 columns and 593136 nonzeros
+Model fingerprint: 0x9c2a162f
+Model has 25920 quadratic constraints
+Variable types: 70905 continuous, 50945 integer (50945 binary)
+Coefficient statistics:
+  Matrix range     [1e-02, 2e+02]
+  QMatrix range    [3e+00, 2e+02]
+  QLMatrix range   [1e+00, 4e+03]
+  Objective range  [3e-01, 2e+03]
+  Bounds range     [4e-03, 1e+03]
+  RHS range        [2e-04, 2e+02]
+  QRHS range       [1e+03, 4e+03]
+Presolve removed 194532 rows and 88596 columns
+Presolve time: 2.28s
+
+Q matrix is non-PSD after presolve substitutions
+Trying again without substitutions in Q matrices...
+
+Presolve removed 190548 rows and 84561 columns (presolve time = 6s)...
+Presolve removed 190548 rows and 84561 columns
+Presolve time: 5.52s
+Presolved: 145296 rows, 63210 columns, 453801 nonzeros
+Presolved model has 25920 bilinear constraint(s)
+
+Solving non-convex MIQCP
+
+Variable types: 58253 continuous, 4957 integer (4957 binary)
+Found heuristic solution: objective 1685331.8446
+
+Deterministic concurrent LP optimizer: primal and dual simplex (primal and dual model)
+Showing primal log only...
+
+Root relaxation presolved: 49811 rows, 18775 columns, 172873 nonzeros
+
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.2005040e+06   6.182669e+02   1.123382e+09      9s
+Concurrent spin time: 0.05s
+
+Solved with dual simplex
+
+Root relaxation: objective 1.292785e+06, 13333 iterations, 1.22 seconds (0.98 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 1292784.93    0  499 1685331.84 1292784.93  23.3%     -   11s
+     0     0 1293678.69    0  528 1685331.84 1293678.69  23.2%     -   11s
+     0     0 1322155.35    0  482 1685331.84 1322155.35  21.5%     -   14s
+     0     0 1323166.38    0  463 1685331.84 1323166.38  21.5%     -   14s
+     0     0 1324388.15    0  464 1685331.84 1324388.15  21.4%     -   14s
+H    0     0                    1676360.7478 1324388.15  21.0%     -   16s
+H    0     0                    1463881.7628 1324388.15  9.53%     -   16s
+     0     0 1338727.82    0 1455 1463881.76 1338727.82  8.55%     -   17s
+     0     0 1350533.66    0 1441 1463881.76 1350533.66  7.74%     -   18s
+H    0     0                    1411248.5544 1350543.54  4.30%     -   18s
+     0     0 1350786.57    0 1439 1411248.55 1350786.57  4.28%     -   18s
+     0     0 1362518.11    0 1363 1411248.55 1362518.11  3.45%     -   19s
+     0     0 1362632.65    0 1350 1411248.55 1362632.65  3.44%     -   19s
+H    0     0                    1382017.0015 1365318.92  1.21%     -   19s
+     0     0 1365318.92    0 1351 1382017.00 1365318.92  1.21%     -   19s
+H    0     0                    1366822.3810 1365327.06  0.11%     -   19s
+H    0     0                    1366822.3803 1365327.06  0.11%     -   19s
+     0     0 1365332.07    0 1351 1366822.38 1365332.07  0.11%     -   19s
+     0     0 1366328.53    0 1264 1366822.38 1366328.53  0.04%     -   20s
+     0     0 1366328.53    0 1264 1366822.38 1366328.53  0.04%     -   20s
+     0     0 1366354.36    0 1266 1366822.38 1366354.36  0.03%     -   20s
+     0     0 1366424.49    0 1281 1366822.38 1366424.49  0.03%     -   20s
+     0     0 1366438.97    0 1284 1366822.38 1366438.97  0.03%     -   20s
+     0     0 1366467.45    0 1263 1366822.38 1366467.45  0.03%     -   21s
+     0     0 1366497.15    0 1285 1366822.38 1366497.15  0.02%     -   21s
+     0     0 1366534.51    0 1271 1366822.38 1366534.51  0.02%     -   21s
+     0     0 1366552.90    0 1284 1366822.38 1366552.90  0.02%     -   21s
+     0     0 1366723.13    0 1287 1366822.38 1366723.13  0.01%     -   21s
+
+Cutting planes:
+  Gomory: 7
+  Implied bound: 93
+  Clique: 2
+  MIR: 312
+  Flow cover: 31
+  Zero half: 17
+  RLT: 25
+  Relax-and-lift: 17
+
+Explored 1 nodes (46659 simplex iterations) in 21.74 seconds (19.61 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 6: 1.36682e+06 1.38202e+06 1.41125e+06 ... 1.68533e+06
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.366822380275e+06, best bound 1.366723131344e+06, gap 0.0073%

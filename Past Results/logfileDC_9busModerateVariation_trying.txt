@@ -1,0 +1,60 @@
+
+Gurobi 12.0.0 (win64) logging started Mon Nov 24 16:59:52 2025
+
+Set parameter LogFile to value "logfileDC_9busModerateVariation_trying.txt"
+Gurobi Optimizer version 12.0.0 build v12.0.0rc1 (win64 - Windows 10.0 (19045.2))
+
+CPU model: AMD Ryzen 7 3700X 8-Core Processor, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Optimize a model with 3948746 rows, 259571 columns and 9855072 nonzeros
+Model fingerprint: 0x46d5c8ce
+Variable types: 114453 continuous, 145118 integer (145118 binary)
+Coefficient statistics:
+  Matrix range     [3e-03, 1e+02]
+  Objective range  [6e-01, 2e+03]
+  Bounds range     [3e-03, 1e+02]
+  RHS range        [4e-03, 1e+02]
+Presolve removed 3256902 rows and 174997 columns
+Presolve time: 3.65s
+Presolved: 691844 rows, 84574 columns, 2107875 nonzeros
+Variable types: 26208 continuous, 58366 integer (58366 binary)
+Found heuristic solution: objective 2.685265e+07
+Performing another presolve...
+Presolve removed 108912 rows and 35245 columns (presolve time = 5s)...
+Presolve removed 146053 rows and 49769 columns (presolve time = 10s)...
+Presolve removed 256827 rows and 66188 columns (presolve time = 15s)...
+Presolve removed 305652 rows and 68788 columns (presolve time = 20s)...
+Presolve removed 571055 rows and 78786 columns
+Presolve time: 24.57s
+Found heuristic solution: objective 2.456584e+07
+Root relaxation presolved: 5710 rows, 196663 columns, 1066993 nonzeros
+
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.6167000e+07   0.000000e+00   5.644246e+05     34s
+   22463    2.3912138e+07   0.000000e+00   0.000000e+00     35s
+   22463    2.3912138e+07   0.000000e+00   0.000000e+00     35s
+   22463    2.3912138e+07   0.000000e+00   0.000000e+00     35s
+
+Root relaxation: objective 2.391214e+07, 22463 iterations, 1.75 seconds (2.15 work units)
+Total elapsed time = 34.94s (DegenMoves)
+Total elapsed time = 35.36s (DegenMoves)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 2.3912e+07    0   66 2.4566e+07 2.3912e+07  2.66%     -   35s
+     0     0 2.3912e+07    0  185 2.4566e+07 2.3912e+07  2.66%     -   35s
+H    0     0                    2.391214e+07 2.3912e+07  0.00%     -   36s
+     0     0 2.3912e+07    0  185 2.3912e+07 2.3912e+07  0.00%     -   36s
+
+Explored 1 nodes (23670 simplex iterations) in 36.55 seconds (31.17 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 3: 2.39121e+07 2.45658e+07 2.68526e+07 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.391213810371e+07, best bound 2.391213810371e+07, gap 0.0000%

@@ -1,0 +1,58 @@
+
+Gurobi 12.0.0 (win64) logging started Mon Nov 24 16:25:27 2025
+
+Set parameter LogFile to value "logfileDC_5busModerateVariation_trying.txt"
+Gurobi Optimizer version 12.0.0 build v12.0.0rc1 (win64 - Windows 10.0 (19045.2))
+
+CPU model: AMD Ryzen 7 3700X 8-Core Processor, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Optimize a model with 223524 rows, 82970 columns and 593136 nonzeros
+Model fingerprint: 0xa9fde3d8
+Variable types: 32025 continuous, 50945 integer (50945 binary)
+Coefficient statistics:
+  Matrix range     [1e-02, 2e+02]
+  Objective range  [3e-01, 2e+03]
+  Bounds range     [4e-03, 1e+00]
+  RHS range        [2e-04, 2e+02]
+Presolve removed 190088 rows and 74962 columns
+Presolve time: 1.23s
+Presolved: 33436 rows, 8008 columns, 105386 nonzeros
+Variable types: 6836 continuous, 1172 integer (1172 binary)
+Found heuristic solution: objective 1592706.9454
+Found heuristic solution: objective 1571482.8790
+Performing another presolve...
+Presolve removed 31036 rows and 7082 columns
+Presolve time: 1.21s
+Found heuristic solution: objective 1444152.2672
+
+Root relaxation: objective 1.363044e+06, 2290 iterations, 0.13 seconds (0.18 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 1363044.09    0  151 1444152.27 1363044.09  5.62%     -    2s
+H    0     0                    1367820.5800 1363044.09  0.35%     -    2s
+H    0     0                    1367321.4805 1363044.09  0.31%     -    2s
+H    0     0                    1366822.3810 1363044.09  0.28%     -    3s
+
+Cutting planes:
+  Learned: 19
+  Gomory: 9
+  Cover: 5
+  Implied bound: 31
+  Clique: 9
+  MIR: 81
+  Flow cover: 32
+  Zero half: 8
+  RLT: 6
+  Relax-and-lift: 10
+  BQP: 1
+
+Explored 1 nodes (2290 simplex iterations) in 3.24 seconds (3.96 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 7: 1.36682e+06 1.36732e+06 1.36782e+06 ... 1.59271e+06
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.366822380980e+06, best bound 1.366818165320e+06, gap 0.0003%

@@ -1,0 +1,74 @@
+
+Gurobi 12.0.0 (win64) logging started Mon Nov 24 18:52:03 2025
+
+Set parameter LogFile to value "logfileACDC_9busExtremeVariation_tryingfr.txt"
+Gurobi Optimizer version 12.0.0 build v12.0.0rc1 (win64 - Windows 10.0 (19045.2))
+
+CPU model: AMD Ryzen 7 3700X 8-Core Processor, instruction set [SSE2|AVX|AVX2]
+Thread count: 8 physical cores, 16 logical processors, using up to 16 threads
+
+Optimize a model with 3948746 rows, 308819 columns and 9732303 nonzeros
+Model fingerprint: 0xb39cf259
+Model has 32832 quadratic constraints
+Variable types: 163701 continuous, 145118 integer (145118 binary)
+Coefficient statistics:
+  Matrix range     [3e-03, 1e+02]
+  QMatrix range    [1e+00, 2e+01]
+  QLMatrix range   [1e+00, 1e+03]
+  Objective range  [6e-01, 2e+03]
+  Bounds range     [3e-03, 1e+03]
+  RHS range        [4e-03, 1e+02]
+  QRHS range       [1e+03, 1e+03]
+Presolve removed 3314860 rows and 183494 columns (presolve time = 48s)...
+Presolve removed 3314860 rows and 183494 columns
+Presolve time: 47.65s
+Presolved: 847294 rows, 174574 columns, 2592938 nonzeros
+Presolved model has 49248 bilinear constraint(s)
+
+Solving non-convex MIQCP
+
+Variable types: 124705 continuous, 49869 integer (49869 binary)
+Performing another presolve...
+Presolve removed 139233 rows and 142218 columns (presolve time = 5s)...
+Presolve removed 160496 rows and 149007 columns (presolve time = 10s)...
+Presolve removed 219853 rows and 155309 columns
+Presolve time: 10.46s
+Found heuristic solution: objective 2.802201e+07
+Found heuristic solution: objective 2.786806e+07
+Found heuristic solution: objective 2.766055e+07
+Performing another presolve...
+Presolve removed 39654 rows and 2128 columns (presolve time = 5s)...
+Presolve removed 68070 rows and 2720 columns (presolve time = 10s)...
+Presolve removed 81420 rows and 3521 columns (presolve time = 15s)...
+Presolve removed 333313 rows and 13436 columns
+Presolve time: 17.88s
+Found heuristic solution: objective 2.513081e+07
+Root relaxation presolved: 5773 rows, 189462 columns, 1031591 nonzeros
+
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.7035466e+07   0.000000e+00   5.130687e+05     82s
+   19288    2.3912138e+07   0.000000e+00   0.000000e+00     82s
+   19288    2.3912138e+07   0.000000e+00   0.000000e+00     82s
+   19288    2.3912138e+07   0.000000e+00   0.000000e+00     82s
+
+Root relaxation: objective 2.391214e+07, 19288 iterations, 1.42 seconds (1.90 work units)
+Total elapsed time = 82.53s (DegenMoves)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 2.3912e+07    0   62 2.5131e+07 2.3912e+07  4.85%     -   83s
+     0     0 2.3912e+07    0   75 2.5131e+07 2.3912e+07  4.85%     -   83s
+H    0     0                    2.419504e+07 2.3912e+07  1.17%     -   83s
+H    0     0                    2.391215e+07 2.3912e+07  0.00%     -   84s
+
+Explored 1 nodes (21048 simplex iterations) in 84.44 seconds (39.66 work units)
+Thread count was 16 (of 16 available processors)
+
+Solution count 8: 2.39122e+07 2.4195e+07 2.51308e+07 ... 2.8022e+07
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.391215143006e+07, best bound 2.391213782608e+07, gap 0.0001%
