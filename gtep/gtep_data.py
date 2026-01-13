@@ -26,7 +26,7 @@ class ExpansionPlanningData:
         options_dict = {
             "data_path": data_path,
             "input_format": "rts-gmlc",
-            "start_date": "01-01-2020",
+            "start_date": "01-01-2019",
             "num_days": 365,
             "sced_horizon": 1,
             "sced_frequency_minutes": 60,
@@ -38,7 +38,7 @@ class ExpansionPlanningData:
         # Use prescient data provider to load in sequential data for representative periods
         data_list = []
 
-        x = datetime.datetime(2020, 1, 1)
+        x = datetime.datetime(2019, 1, 1)
         data_provider = gmlc_data_provider.GmlcDataProvider(options=prescient_options)
         # populate an egret model data with the basic stuff
         self.md = data_provider.get_initial_actuals_model(
@@ -70,16 +70,16 @@ class ExpansionPlanningData:
         # Arbitrary time points and lengths picked for representative periods
         # default here allows up to 24 hours for periods
         time_keys = self.md.data["system"]["time_keys"]
-        key_idx = time_keys.index("2020-01-01 00:00")
+        key_idx = time_keys.index("2019-01-01 00:00")
         time_key_set = time_keys[key_idx : key_idx + 24]
         data_list.append(self.md.clone_at_time_keys(time_key_set))
-        key_idx = time_keys.index("2020-04-01 00:00")
+        key_idx = time_keys.index("2019-04-01 00:00")
         time_key_set = time_keys[key_idx : key_idx + 24]
         data_list.append(self.md.clone_at_time_keys(time_key_set))
-        key_idx = time_keys.index("2020-07-01 00:00")
+        key_idx = time_keys.index("2019-07-01 00:00")
         time_key_set = time_keys[key_idx : key_idx + 24]
         data_list.append(self.md.clone_at_time_keys(time_key_set))
-        key_idx = time_keys.index("2020-10-01 00:00")
+        key_idx = time_keys.index("2019-10-01 00:00")
         time_key_set = time_keys[key_idx : key_idx + 24]
         data_list.append(self.md.clone_at_time_keys(time_key_set))
 
