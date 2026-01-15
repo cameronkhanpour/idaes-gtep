@@ -1778,7 +1778,17 @@ def model_data_references(m):
         for thermalGen in m.thermalGenerators
     }
 
-    # Demand at each bus
+    # # Demand at each bus
+    # def _extract_scalar_p_load(load_entry):
+    #     """Safely pull a scalar p_load; prescient data stores time-series under ['values']"""
+    #     p_load = load_entry.get("p_load")
+    #     if isinstance(p_load, dict):
+    #         if "values" in p_load and p_load["values"]:
+    #             return p_load["values"][0]
+    #         if "value" in p_load:
+    #             return p_load["value"]
+    #     return p_load
+
     m.loads = {
         m.md.data["elements"]["load"][load_n]["bus"]: m.md.data["elements"]["load"][
             load_n

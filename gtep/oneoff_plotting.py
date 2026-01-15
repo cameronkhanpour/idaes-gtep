@@ -10,7 +10,9 @@ import networkx as nx
 from matplotlib.patches import FancyArrowPatch
 
 
-save_dir = "./5busPlots/"
+REPO_ROOT = Path(__file__).resolve().parents[1]
+save_dir = REPO_ROOT / "123busPlots"
+save_dir.mkdir(parents=True, exist_ok=True)
 block_pos = "bottom"  # "centered"  # 'bottom'
 
 plt.rcParams.update({"font.size": 24})
@@ -66,22 +68,24 @@ def branches_to_dict(dict_in):
     return branch_results_dict
 
 
-def plot_investment_graph(bus_dict, branch_dict, branch_results_dict, suptitle):
+def plot_investment_graph(
+    bus_dict, branch_dict, branch_results_dict, suptitle, show_labels=False
+):
     branch_state_colors = {
         "Installed": "xkcd:blue",
-        #"Extended": "xkcd:orange",
+        "Extended": "xkcd:orange",
         "Operational": "xkcd:green",
         "Disabled": "xkcd:orange",
-        #"Retired": "xkcd:grey",
+        "Retired": "xkcd:grey",
     }
     branch_state_linestyles = {
         "Installed": "--",
-        #"Extended": "-.",
+        "Extended": "-.",
         "Operational": "-",
         "Disabled": ":",
-        #"Retired": ":",
+        "Retired": ":",
     }
-    branch_line_thickness = 3
+    branch_line_thickness = 2
 
     for this_invest_stage, this_branch_states in branch_results_dict.items():
         G = nx.MultiGraph()
@@ -118,19 +122,20 @@ def plot_investment_graph(bus_dict, branch_dict, branch_results_dict, suptitle):
         nx.draw_networkx_nodes(
             G,
             pos,
-            node_size=3000,
+            node_size=300,
             node_color="white",
             edgecolors="black",
             ax=ax_graph,
         )
-        nx.draw_networkx_labels(
-            G,
-            pos,
-            labels,
-            font_size=18,
-            font_color="black",
-            ax=ax_graph,
-        )
+        if show_labels:
+            nx.draw_networkx_labels(
+                G,
+                pos,
+                labels,
+                font_size=18,
+                font_color="black",
+                ax=ax_graph,
+            )
 
         # group edges by unordered pair to assign unique rad per parallel edge
         pair_to_edges = {}
@@ -181,18 +186,15 @@ def plot_investment_graph(bus_dict, branch_dict, branch_results_dict, suptitle):
             )
 
         fig.legend(loc="lower center", fancybox=True, shadow=True, ncol=5)
-        fig.suptitle(f"{suptitle} - {this_invest_stage}")
-        fig.savefig(f"{save_dir}DC_ExtremeVariation_{this_invest_stage}_SuperNew.png")
+        fig.suptitle(f"{suptitle} - 123 Bus - DC")
+        fig.savefig(save_dir / f"DC_{this_invest_stage}_justincase.png")
         plt.close(fig)
 
 
-target_file = Path(
-    "./gtep_solution_DC_5busExtremeVariation_test.json"
-)
+target_file = REPO_ROOT / "gtep_solution_DC_123bus.json"
 
 # read gen info
-gens_pd = pd.read_csv("./gtep/data/5bus_jsc/gen.csv")
-
+gens_pd = pd.read_csv(REPO_ROOT / "gtep" / "data" / "123_Bus_Coal" / "gen.csv")
 # "./gtep_wiggles.json"
 # this_json = read_json("./dispatchable_investments 2.json")
 this_json = read_json(target_file)

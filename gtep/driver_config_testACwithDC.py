@@ -52,14 +52,14 @@ def apply_plan_to_model(m, plan):
 
 
 mod_object = ExpansionPlanningModel(
-    stages=1,
+    stages=3,
     data=data_object.md,
     num_reps=1,
     len_reps=1,
     num_commit=24, # 24
     num_dispatch=6, # 4
 )
-mod_object.config["flow_model"] = "DC"
+mod_object.config["flow_model"] = "ACR"
 for k,v in mod_object.config.items():
     ic(k,v)
 
@@ -77,13 +77,13 @@ opt = SolverFactory("gurobi")
 opt = Gurobi()
 #opt = SolverFactory("ipopt")
 #opt = Ipopt()
-opt.config.logfile = "logfileDC_123bus.txt"
+opt.config.logfile = "logfile_Moderate_ACwithDC_123bus.txt"
 # # mod_object.results = opt.solve(mod_object.model, tee=True)
 mod_object.results = opt.solve(mod_object.model)
 
 sol_object = ExpansionPlanningSolution()
 sol_object.load_from_model(mod_object)
-sol_object.dump_json("./gtep_solution_DC_123bus.json")
+sol_object.dump_json("./gtep_solution_Moderate_ACwithDC_123bus.json")
 
 sol_object.import_data_object(data_object)
 
