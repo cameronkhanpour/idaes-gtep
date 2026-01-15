@@ -48,7 +48,7 @@ def apply_plan_to_model(m, plan):
                     getattr(blk, varname)[ren].fix(stage_plan[key])
 
 # Usage
-# dc_plan = load_dc_plan("gtep_solution_DC_9busExtremeVariation_trying.json")
+dc_plan = load_dc_plan("gtep_solution_Moderate_DC_123bus.json")
 
 
 mod_object = ExpansionPlanningModel(
@@ -66,7 +66,7 @@ for k,v in mod_object.config.items():
 # quit()
 
 mod_object.create_model()
-# apply_plan_to_model(mod_object.model, dc_plan)
+apply_plan_to_model(mod_object.model, dc_plan)
 #ic(mod_object)
 
 
